@@ -39,34 +39,54 @@ export function CoupleVoting() {
     setCodeError("");
 
     try {
-      // TODO: Integrare MongoDB API
-      // Vezi /MONGODB_INTEGRATION.md pentru detalii complete
-      
-      // Simulare pentru development - ȘTERGE ACEST BLOC în producție
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Simulare eroare pentru cod invalid (pentru testare)
-      if (accessCode.trim().length < 4) {
-        setCodeError("Cod invalid! Te rugăm să verifici codul introdus.");
+      // Send POST request to backend
+      //de schimbagt URL-ul inapoi la cel real pentru productie Vesel Matei
+      const res = await fetch('http://localhost:5000/vote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id: accessCode, vote: selectedCouple })
+      });
+
+      const data = await res.json();
+
+      // Expecting JSON shape: { status: boolean, message: string }
+      if (data?.status === false) {
+        setCodeError(data.message || 'Cod invalid sau eroare la server.');
         setIsSubmitting(false);
         return;
       }
 
-      // Success - arată mesaj și resetează formul
-      const votedCouple = COUPLES_DATA.find(c => c.id === selectedCouple);
-      
-      toast.success("Votul tău a fost înregistrat! 🎉", {
-        description: `Ai votat pentru ${votedCouple?.person1} & ${votedCouple?.person2} (${votedCouple?.destination})`
-      });
+      if (data?.status === true) {
+        // Debug: log full server response
+        console.debug('Vote response:', data);
 
-      // Închide dialog-ul și resetează
-      setTimeout(() => {
-        setIsOpen(false);
-        setAccessCode("");
-        setSelectedCouple(null);
-        setCodeError("");
-      }, 1500);
+        // Use the local selectedCouple to find the couple for the toast
+        const votedCouple = COUPLES_DATA.find(c => c.id == data.vote);
 
+        // Always show a success toast; include description if we have couple details
+        if (votedCouple) {
+          toast.success(data.message || 'Votul tău a fost înregistrat! 🎉', {
+            description: `Ai votat pentru ${votedCouple.person1} & ${votedCouple.person2} (${votedCouple.destination})`
+          });
+        } else {
+          toast.success(data.message || 'Votul tău a fost înregistrat! 🎉');
+        }
+
+
+        //L-am scos temporar pentru testare(ma enerva) Vesel Matei
+        // Close dialog and reset after short delay for UX
+        /*setTimeout(() => {
+          setIsOpen(false);
+          setAccessCode('');
+          setSelectedCouple(null);
+          setCodeError('');
+        }, 1500);*/
+      } else {
+        // Fallback for unexpected responses
+        setCodeError('Răspuns neașteptat de la server.');
+      }
     } catch (error) {
       setCodeError("A apărut o eroare. Te rugăm să încerci din nou.");
       console.error('Vote error:', error);
