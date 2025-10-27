@@ -3,7 +3,6 @@ import { EventDetails } from "./components/EventDetails";
 import { Gallery } from "./components/Gallery";
 import { CoupleReveal } from "./components/CoupleReveal";
 import { CoupleVoting } from "./components/CoupleVoting";
-import { SecretArtist } from "./components/SecretArtist";
 import { Sponsors } from "./components/Sponsors";
 import { TicketCTA } from "./components/TicketCTA";
 import { Footer } from "./components/Footer";
@@ -63,9 +62,6 @@ export default function App() {
       </FadeInSection>
       <FadeInSection>
         <CoupleVoting />
-      </FadeInSection>
-      <FadeInSection>
-        <SecretArtist />
       </FadeInSection>
       <FadeInSection>
         <Sponsors />
