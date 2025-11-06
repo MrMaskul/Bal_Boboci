@@ -1,30 +1,38 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+
+type GalleryImage = {
+  url: string;
+  title: string;
+  
+  emoji: string;
+};
+
 export function Gallery() {
 
-  const images = [
+  const images: GalleryImage[] = [
     {
-      url: "https://images.unsplash.com/photo-1738023354227-16a406891bd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwYmFsbCUyMGdhbGElMjBldmVudHxlbnwxfHx8fDE3NjAzNzE1MTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Balul Bobocilor 2024",
-      year: "2024",
+      url: "/images/bal2024/bal_toti.jpeg",
+      title: "Echipa LSAC",
+      
       emoji: "✨"
     },
     {
-      url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwc3R1ZGVudHMlMjBwYXJ0eSUyMGRhbmNpbmd8ZW58MXx8fHwxNzYwMzcxNTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Balul Bobocilor 2023",
-      year: "2023",
+      url:"/images/bal2024/bal_fete.jpeg",
+      title: "",
+     
       emoji: "🎉"
     },
     {
-      url: "https://images.unsplash.com/photo-1729073707916-57502c40fd7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb3JtYWwlMjBkYW5jZSUyMGV2ZW50JTIwY3Jvd2R8ZW58MXx8fHwxNzYwMzcxNTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Balul Bobocilor 2022",
-      year: "2022",
+      url: "/images/bal2024/bal_baieti.jpeg",
+      title: "",
+      
       emoji: "🎊"
     },
     {
-      url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYWxhJTIwbmlnaHQlMjBjZWxlYnJhdGlvbnxlbnwxfHx8fDE3NjAzNzE1MTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      title: "Balul Bobocilor 2021",
-      year: "2021",
+      url: "/images/bal2024/boboci.jpeg",
+      title: "",
+      
       emoji: "🎭"
     }
 
@@ -44,10 +52,10 @@ export function Gallery() {
             className="text-center mb-16"
           >
             <h2 className="text-white text-4xl md:text-5xl mb-4">
-              Amintiri din Balurile Anterioare
+              Amintiri de la Balul Bobocilor din 2024
             </h2>
             <p className="text-blue-200 max-w-2xl mx-auto">
-              Privește în urmă la momentele magice din edițiile anterioare ale Balului Bobocilor
+              Privește în urmă la momentele magice din editia anterioara a Balului Bobocilor
             </p>
           </motion.div>
 
@@ -72,7 +80,7 @@ export function Gallery() {
                 <div className="absolute inset-0 flex items-end p-6">
                   <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="text-4xl mb-2">{image.emoji}</div>
-                    <p className="text-cyan-400 mb-1 text-sm">{image.year}</p>
+                    
                     <h3 className="text-white text-2xl">{image.title}</h3>
                   </div>
                 </div>
@@ -103,7 +111,7 @@ export function Gallery() {
                 className="max-w-full max-h-full object-contain rounded-xl"
               />
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-                <p className="text-cyan-400 mb-2">{images[selectedImage].year}</p>
+                
                 <h3 className="text-white text-2xl">{images[selectedImage].title}</h3>
               </div>
             </motion.div>

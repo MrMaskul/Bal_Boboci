@@ -13,9 +13,11 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b3JsZCUyMG1hcCUyMHRyYXZlbCUyMGdsb2JlfGVufDB8fHx8MTczMDMwNjMzM3ww&ixlib=rb-4.1.0&q=80&w=1080"
-          alt="World Map"
+          src="/images/banner.png"
+          alt="LSAC Balul Bobocilor Banner"
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
       </div>
