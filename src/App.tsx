@@ -4,7 +4,7 @@ import { Gallery } from "./components/Gallery";
 import { CoupleReveal } from "./components/CoupleReveal";
 import { CoupleVoting } from "./components/CoupleVoting";
 import { Sponsors } from "./components/Sponsors";
-import { TicketCTA } from "./components/TicketCTA";
+//import { TicketCTA } from "./components/TicketCTA";
 import { Footer } from "./components/Footer";
 import { FadeInSection } from "./components/FadeInSection";
 import { Toaster } from "./components/ui/sonner";
@@ -66,9 +66,7 @@ export default function App() {
       <FadeInSection>
         <Sponsors />
       </FadeInSection>
-      <FadeInSection>
-        <TicketCTA />
-      </FadeInSection>
+      
       <FadeInSection>
         <Footer />
       </FadeInSection>

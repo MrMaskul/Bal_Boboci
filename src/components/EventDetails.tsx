@@ -12,7 +12,7 @@ export function EventDetails() {
     },
     {
       icon: Palmtree,
-      continent: "America de Centrala si de Sud",
+      continent: "America Centrala si de Sud",
       title: "Zona Festivă",
       description: "Ritmuri latino și energie vibrantă pentru o petrecere de neuitat",
       emoji: "💃"
@@ -105,7 +105,7 @@ export function EventDetails() {
                 </h4>
                 <div className="space-y-3 text-blue-200">
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
-                    <span>Early Bird (până 25 Noiembrie):</span>
+                    <span>Early Bird (până 15 Noiembrie):</span>
                     <span className="text-cyan-400">20 RON</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">

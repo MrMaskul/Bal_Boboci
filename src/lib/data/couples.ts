@@ -12,6 +12,11 @@ export interface CoupleData {
 // TEMPORAR: Setată în trecut pentru testare - schimbă înapoi la "2025-11-10T00:00:00" pentru producție
 export const FIRST_UNLOCK_DATE = new Date("2025-11-10T00:00:00");
 
+// Data de start pentru votarea cuplurilor.
+// Modifică această valoare pentru a seta data/ora exactă a deschiderii votului.
+// Format recomandat: ISO local (YYYY-MM-DDTHH:mm:ss) interpretat în fusul orar local al navigatorului.
+export const VOTING_START_DATE = new Date("2025-11-29T23:00:00");
+
 // Lista de cupluri (fiecare cuplu se deblochează într-o zi diferită)
 export const COUPLES_DATA: CoupleData[] = [
   { id: 1, person1: "Giulia B.", person2: "David C.", destination: "Argentina", emoji: "🪘", dayOffset: 0 },

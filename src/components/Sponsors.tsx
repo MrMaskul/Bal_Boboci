@@ -76,13 +76,7 @@ export function Sponsors() {
       description: "Partener principal — entertainment & afterparty.",
       image: "/images/sponsors/vivid.jpg",
     },
-    {
-      name: "Iulius Mall",
-      tier: "gold",
-      link: "https://iasi.iuliusmall.com/ro",
-      description: "Partener logistic și spațiu promoțional.",
-      image: "/images/sponsors/iulius.jpg",
-    },
+  
     {
       name: "Chicano Tattoo",
       tier: "gold",
@@ -92,14 +86,14 @@ export function Sponsors() {
     },
     {
       name: "T Zero",
-      tier: "silver",
+      tier: "bronze",
       link: "https://tzeropub.ro",
       description: "Distracție, muzică bună și vibe autentic de pub.",
       image: "/images/sponsors/tzero.webp",
     },
     {
       name: "Fitness Fight",
-      tier: "silver",
+      tier: "bronze",
       link: "https://www.facebook.com/p/Fitness-Fight-100063699484450",
       description: "Energie pură, disciplină și adrenalină în ring.",
       image: "/images/sponsors/fitness_fight.webp",
@@ -127,7 +121,7 @@ export function Sponsors() {
     },
     {
       name: "Maison du Cafe",
-      tier: "bronze",
+      tier: "silver",
       link: "https://www.maisonducafe.ro",
       description: "Cafea de calitate și momente plăcute împreună",
       image: "/images/sponsors/maison.webp",

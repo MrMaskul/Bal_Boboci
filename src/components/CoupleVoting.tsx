@@ -5,14 +5,14 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Heart, Lock, Vote, Plane, Sparkles, AlertCircle, CheckCircle, Clock, Globe2 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { toast } from "sonner";
-import { COUPLES_DATA } from "../lib/data/couples";
+import { COUPLES_DATA, VOTING_START_DATE } from "../lib/data/couples";
 import { useCountdown } from "../lib/hooks/useCountdown";
 import { CountdownDisplay } from "./couple/CountdownDisplay";
 import { VotingCoupleCard } from "./couple/VotingCoupleCard";
 
 export function CoupleVoting() {
-  // Data dezblocării votării - 15 noiembrie 2025, ora 00:00 (miezul nopții)
-  const unlockDate = new Date("2025-11-29T:00:00");
+  // Data de start a votării (centralizată în lib/data/couples.ts)
+  const unlockDate = VOTING_START_DATE;
   
   const [isOpen, setIsOpen] = useState(false);
   const [accessCode, setAccessCode] = useState("");
@@ -156,7 +156,7 @@ export function CoupleVoting() {
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-12 py-8 text-2xl shadow-2xl shadow-cyan-500/30"
+                  className="mx-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-12 py-8 text-2xl shadow-2xl shadow-cyan-500/30"
                 >
                   {!isUnlocked ? (
                     <>
@@ -277,7 +277,7 @@ function LockedVotingState({ timeRemaining, unlockDate }: { timeRemaining: any; 
         <CountdownDisplay timeRemaining={timeRemaining} />
 
         <p className="text-blue-200 text-xl mt-8">
-          Votarea se deschide pe {unlockDate.toLocaleDateString('ro-RO', {
+          Votarea se deschide pe {unlockDate.toLocaleString('ro-RO', {
             day: 'numeric',
             month: 'long',
             year: 'numeric',
