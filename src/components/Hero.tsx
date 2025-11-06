@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Calendar, MapPin, Clock, Globe, Plane } from "lucide-react";
+import { Calendar, MapPin, Clock, Plane } from "lucide-react";
 import { motion } from "motion/react";
 
 export function Hero() {
@@ -51,12 +51,18 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
         <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, type: "spring" }}
-          className="mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-4"
         >
-          <Globe className="w-20 h-20 mx-auto text-cyan-400 mb-4" />
+          <img
+            src="/images/logo/lsac-logo.png"
+            alt="LSAC Logo"
+            className="h-12 w-auto mx-auto"
+            loading="eager"
+            decoding="async"
+          />
         </motion.div>
 
         <motion.div
@@ -104,15 +110,15 @@ export function Hero() {
         >
           <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
             <Calendar className="w-5 h-5 text-cyan-400" />
-            <span>15 Noiembrie 2025</span>
+            <span>29 Noiembrie 2025</span>
           </div>
           <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
             <Clock className="w-5 h-5 text-cyan-400" />
-            <span>19:00 - 03:00</span>
+            <span>19:00 - 04:00</span>
           </div>
           <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
             <MapPin className="w-5 h-5 text-cyan-400" />
-            <span>Vivid Lounge</span>
+            <span>Vivid Lounge and Club</span>
           </div>
         </motion.div>
 

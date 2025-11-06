@@ -12,8 +12,7 @@ import { VotingCoupleCard } from "./couple/VotingCoupleCard";
 
 export function CoupleVoting() {
   // Data dezblocării votării - 15 noiembrie 2025, ora 00:00 (miezul nopții)
-  // TEMPORAR: Setată în trecut pentru testare - schimbă înapoi la "2025-11-15T00:00:00" pentru producție
-  const unlockDate = new Date("2020-11-15T00:00:00");
+  const unlockDate = new Date("2025-11-29T:00:00");
   
   const [isOpen, setIsOpen] = useState(false);
   const [accessCode, setAccessCode] = useState("");
@@ -24,6 +23,10 @@ export function CoupleVoting() {
   const { timeRemaining, isExpired: isUnlocked } = useCountdown(unlockDate);
 
   const handleSubmitVote = async () => {
+    if (!isUnlocked) {
+      setCodeError("Votarea nu este deschisă încă. Revino în ziua balului.");
+      return;
+    }
     // Validare
     if (!accessCode.trim()) {
       setCodeError("Te rugăm să introduci codul de acces!");

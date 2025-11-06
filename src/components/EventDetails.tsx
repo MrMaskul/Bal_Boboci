@@ -12,10 +12,10 @@ export function EventDetails() {
     },
     {
       icon: Palmtree,
-      continent: "America",
+      continent: "America de Centrala si de Sud",
       title: "Zona Festivă",
       description: "Ritmuri latino și energie vibrantă pentru o petrecere de neuitat",
-      emoji: "🗽"
+      emoji: "💃"
     },
     {
       icon: Mountain,
@@ -24,13 +24,7 @@ export function EventDetails() {
       description: "Colț de relaxare cu decorațiuni asiatice și cocktailuri exotice",
       emoji: "🏯"
     },
-    {
-      icon: Compass,
-      continent: "Africa",
-      title: "Zona Safari",
-      description: "Aventură și muzică tribală pentru spiriturile curajoase",
-      emoji: "🦁"
-    }
+   
   ];
 
   return (
@@ -45,11 +39,11 @@ export function EventDetails() {
             className="text-center mb-16"
           >
             <h2 className="text-white text-4xl md:text-5xl mb-4">
-              Călătorește prin 4 Continente
+              Călătorește prin 3 Continente
             </h2>
             <p className="text-blue-200 max-w-2xl mx-auto">
-              O aventură culinară, muzicală și vizuală care te va purta din Europa până în Africa,
-              din America în Asia, totul într-o singură seară magică.
+              O aventură culinară, muzicală și vizuală care te va purta din Europa pana in
+               America de Centrala si de Sud sau Asia, totul într-o singură seară magică.
             </p>
           </motion.div>
 
@@ -111,16 +105,16 @@ export function EventDetails() {
                 </h4>
                 <div className="space-y-3 text-blue-200">
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
-                    <span>Early Bird (până 1 Nov):</span>
+                    <span>Early Bird (până 25 Noiembrie):</span>
                     <span className="text-cyan-400">20 RON</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
                     <span>Standard:</span>
-                    <span className="text-cyan-400">40 RON</span>
+                    <span className="text-cyan-400">25 RON</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
                     <span>Last Minute:</span>
-                    <span className="text-cyan-400">90 RON</span>
+                    <span className="text-cyan-400">30 RON</span>
                   </div>
                   <div className="pt-4 border-t border-blue-700 text-sm">
                   </div>
