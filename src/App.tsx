@@ -1,11 +1,12 @@
-import { Hero } from "./components/Hero";
-import { EventDetails } from "./components/EventDetails";
-import { Gallery } from "./components/Gallery";
-import { CoupleReveal } from "./components/CoupleReveal";
-import { CoupleVoting } from "./components/CoupleVoting";
-import { Sponsors } from "./components/Sponsors";
-//import { TicketCTA } from "./components/TicketCTA";
-import { Footer } from "./components/Footer";
+import { Suspense, lazy } from "react";
+const Hero = lazy(() => import("./components/Hero").then(m => ({ default: m.Hero })));
+const EventDetails = lazy(() => import("./components/EventDetails").then(m => ({ default: m.EventDetails })));
+const Gallery = lazy(() => import("./components/Gallery").then(m => ({ default: m.Gallery })));
+const CoupleReveal = lazy(() => import("./components/CoupleReveal").then(m => ({ default: m.CoupleReveal })));
+const CoupleVoting = lazy(() => import("./components/CoupleVoting").then(m => ({ default: m.CoupleVoting })));
+const Sponsors = lazy(() => import("./components/Sponsors").then(m => ({ default: m.Sponsors })));
+const TicketCTA = lazy(() => import("./components/TicketCTA").then(m => ({ default: m.TicketCTA })));
+const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })));
 import { FadeInSection } from "./components/FadeInSection";
 import { Toaster } from "./components/ui/sonner";
 
@@ -16,59 +17,77 @@ export default function App() {
       style={{
         background: `
           linear-gradient(to bottom,
-            rgb(10, 25, 47) 0px,
-            rgb(10, 25, 47) 850px,
-            rgb(15, 35, 60) 950px,
-            rgb(20, 50, 80) 1050px,
-            rgb(20, 50, 80) 1900px,
-            rgb(15, 35, 60) 2000px,
-            rgb(10, 25, 47) 2100px,
-            rgb(10, 25, 47) 2950px,
-            rgb(30, 60, 90) 3050px,
-            rgb(45, 85, 120) 3150px,
-            rgb(45, 85, 120) 4000px,
-            rgb(30, 60, 90) 4100px,
-            rgb(10, 25, 47) 4200px,
-            rgb(10, 25, 47) 5050px,
-            rgb(25, 45, 70) 5150px,
-            rgb(35, 65, 95) 5250px,
-            rgb(35, 65, 95) 6100px,
-            rgb(25, 45, 70) 6200px,
-            rgb(35, 65, 95) 6300px,
-            rgb(35, 65, 95) 7150px,
-            rgb(20, 40, 65) 7250px,
-            rgb(10, 25, 47) 7350px,
-            rgb(10, 25, 47) 8200px,
-            rgb(25, 45, 70) 8300px,
-            rgb(35, 65, 95) 8400px,
-            rgb(35, 65, 95) 9250px,
-            rgb(20, 40, 65) 9350px,
-            rgb(10, 25, 47) 9450px,
-            rgb(10, 25, 47) 100%
+            rgb(40, 130, 120) 0px,
+            rgb(40, 130, 120) 850px,
+            rgb(60, 160, 145) 950px,
+            rgb(30, 144, 121) 1050px,
+            rgb(30, 144, 121) 1900px,
+            rgb(60, 160, 145) 2000px,
+            rgb(40, 130, 120) 2100px,
+            rgb(40, 130, 120) 2950px,
+            rgb(42, 170, 154) 3050px,
+            rgb(38, 179, 151) 3150px,
+            rgb(38, 179, 151) 4000px,
+            rgb(42, 170, 154) 4100px,
+            rgb(40, 130, 120) 4200px,
+            rgb(40, 130, 120) 5050px,
+            rgb(38, 179, 151) 5150px,
+            rgb(42, 170, 154) 5250px,
+            rgb(42, 170, 154) 6100px,
+            rgb(38, 179, 151) 6200px,
+            rgb(42, 170, 154) 6300px,
+            rgb(42, 170, 154) 7150px,
+            rgb(60, 160, 145) 7250px,
+            rgb(40, 130, 120) 7350px,
+            rgb(40, 130, 120) 8200px,
+            rgb(38, 179, 151) 8300px,
+            rgb(42, 170, 154) 8400px,
+            rgb(42, 170, 154) 9250px,
+            rgb(60, 160, 145) 9350px,
+            rgb(40, 130, 120) 9450px,
+            rgb(40, 130, 120) 100%
           )
         `,
       }}
     >
       <Toaster />
-      <Hero />
+      <Suspense fallback={<div style={{height: 300}} />}> 
+        <Hero />
+      </Suspense>
       <FadeInSection>
-        <EventDetails />
+        <Suspense fallback={<div style={{height: 200}} />}> 
+          <EventDetails />
+        </Suspense>
       </FadeInSection>
       <FadeInSection>
-        <Gallery />
+        <Suspense fallback={<div style={{height: 200}} />}> 
+          <Gallery />
+        </Suspense>
       </FadeInSection>
       <FadeInSection>
-        <CoupleReveal />
+        <Suspense fallback={<div style={{height: 200}} />}> 
+          <CoupleReveal />
+        </Suspense>
       </FadeInSection>
       <FadeInSection>
-        <CoupleVoting />
+        <Suspense fallback={<div style={{height: 200}} />}> 
+          <CoupleVoting />
+        </Suspense>
       </FadeInSection>
       <FadeInSection>
-        <Sponsors />
+        <Suspense fallback={<div style={{height: 180}} />}> 
+          <TicketCTA />
+        </Suspense>
       </FadeInSection>
-      
       <FadeInSection>
-        <Footer />
+        <Suspense fallback={<div style={{height: 160}} />}> 
+          <Sponsors />
+        </Suspense>
+      </FadeInSection>
+      <FadeInSection>
+        <Suspense fallback={<div style={{height: 140}} />}> 
+          <Footer />
+        </Suspense>
       </FadeInSection>
     </div>
   );

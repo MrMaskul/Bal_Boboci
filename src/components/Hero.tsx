@@ -1,8 +1,14 @@
 import { Button } from "./ui/button";
 import { Calendar, MapPin, Clock, Plane } from "lucide-react";
 import { motion } from "motion/react";
+import { useMemo } from "react";
 
 export function Hero() {
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const floats = useMemo(() => Array.from({ length: 6 }, () => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`
+  })), []);
   const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
   e.preventDefault();
   const element = document.querySelector(id);
@@ -19,19 +25,22 @@ export function Hero() {
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-900/80 to-blue-950/90"></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(38,179,151,0.85) 0%, rgba(38,179,151,0.6) 50%, rgba(38,179,151,0.85) 100%)",
+          }}
+        ></div>
       </div>
 
       {/* Floating travel elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {!prefersReducedMotion && floats.map((pos, i) => (
           <motion.div
             key={i}
             className="absolute"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
+            style={pos}
             animate={{
               y: [-20, 20, -20],
               x: [-10, 10, -10],
@@ -57,7 +66,7 @@ export function Hero() {
           className="mb-4"
         >
           <img
-            src="/images/logo/lsac-logo.png"
+            src="/images/logo/logo_alb.png"
             alt="LSAC Logo"
             className="h-12 w-auto mx-auto"
             loading="eager"
@@ -70,7 +79,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <p className="text-cyan-400 tracking-widest mb-4 text-lg">LSAC PREZINTĂ</p>
+          <p className="text-white text tracking-widest mb-4 text-lg">LSAC PREZINTĂ</p>
         </motion.div>
         
         <motion.h1
@@ -99,7 +108,7 @@ export function Hero() {
           transition={{ delay: 0.9, duration: 0.8 }}
           className="text-blue-200 text-xl md:text-2xl mb-12 max-w-3xl mx-auto"
         >
-          O călătorie magică prin destinațiile lumii într-o singură seară de neuitat
+Fiecare ritm, o nouă destinație.
         </motion.p>
 
         <motion.div
@@ -145,7 +154,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="mt-16 flex justify-center gap-12 text-4xl"
+          className="mt-8 sm:mt-12 md:mt-16 flex justify-center gap-12 text-3xl md:text-4xl"
         >
           <motion.span
             animate={{ y: [-5, 5, -5] }}
@@ -174,21 +183,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <div className="w-6 h-10 border-2 border-cyan-400/50 rounded-full flex justify-center pt-2">
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-3 bg-cyan-400/50 rounded-full"
-          />
-        </div>
-      </motion.div>
+      {/* Scroll Indicator removed as requested */}
     </div>
   );
 }

@@ -44,7 +44,7 @@ export function CoupleReveal() {
     };
 
     checkUnlockedCouples();
-    const interval = setInterval(checkUnlockedCouples, 1000);
+    const interval = setInterval(checkUnlockedCouples, 30000);
 
     return () => clearInterval(interval);
   }, []);
@@ -321,8 +321,8 @@ function LockedCoupleCard({ destination, index, isUnlocked, unlockDate, revealCo
         disabled={!isUnlocked}
         className={`${
           !isUnlocked
-            ? "border-gray-700 text-gray-600 cursor-not-allowed"
-            : "border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500"
+            ? "bg-gray-700/60 text-white/90 border-gray-500 cursor-not-allowed"
+            : "bg-cyan-600/90 text-white font-semibold border-cyan-500 hover:bg-cyan-600 hover:border-cyan-400 shadow-md shadow-black/20"
         }`}
       >
         {!isUnlocked ? (

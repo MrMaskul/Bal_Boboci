@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 
 type Tier = "gold" | "silver" | "bronze";
 
@@ -45,7 +45,7 @@ function SponsorCard({ sponsor }: { sponsor: Sponsor }) {
       <SponsorLogo src={image} alt={`${name} logo`} />
       <p className="text-white text-sm md:text-base font-medium mt-3">{name}</p>
       {description && (
-        <p className="text-gray-400 text-xs mt-1 max-w-[200px]">{description}</p>
+        <p className="text-white/85 text-sm mt-2 max-w-[240px] leading-snug drop-shadow-sm">{description}</p>
       )}
     </div>
   );
@@ -120,6 +120,28 @@ export function Sponsors() {
       image: "/images/sponsors/vmax.webp",
     },
     {
+      name: "Teo's Cafe",
+      tier: "bronze",
+      link: "https://teoscafe.ro",
+      description: "Unde aroma întâlnește energia bună.",
+      image: "/images/sponsors/teos.webp",
+    },
+    {
+      name: "EnerGym Iași",
+      tier: "silver",
+      link: "https://www.energymcenter.ro",
+      description: "Antrenează-ți puterea, nu doar corpul.",
+      image: "/images/sponsors/ener.webp",
+    },
+    {
+      name: "Adorable Flowers & Events Iași",
+      tier: "bronze",
+      link: "https://adorable.ro",
+      description: "Culori, parfum și emoție în fiecare buchet.",
+      image: "/images/sponsors/adorable.webp",
+    },
+
+    {
       name: "Maison du Cafe",
       tier: "silver",
       link: "https://www.maisonducafe.ro",
@@ -168,7 +190,7 @@ export function Sponsors() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl mb-4">Sponsorii Noștri</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-white/85 max-w-2xl mx-auto leading-relaxed drop-shadow">
               Mulțumim partenerilor care fac posibilă organizarea acestui eveniment special
             </p>
           </div>
@@ -222,7 +244,7 @@ export function Sponsors() {
           </TierBlock>
 
           {/* CTA Devino Sponsor */}
-          <div className="mt-16 text-center bg-gradient-to-r from-gray-800 to-gray-900 border border-gray-700 rounded-2xl p-8">
+          <div className="mt-16 text-center rounded-2xl p-8 border-2 border-cyan-500/40 bg-gradient-to-r from-cyan-600/20 to-cyan-500/10">
             <h4 className="text-white text-xl mb-3">Dorești să devii sponsor?</h4>
             <p className="text-gray-400 mb-6 max-w-xl mx-auto">
               Alătură-te partenerilor noștri și ajută-ne să oferim studenților o experiență de neuitat!
@@ -256,17 +278,17 @@ export function Sponsors() {
                 <p className="flex items-center gap-3">
                   <strong className="text-amber-400">Email:</strong>
                   <a
-                    href="mailto:lsaciasi@yahoo.com"
+                    href="mailto:lsaciasi@gmail.com"
                     className="text-gray-300 hover:text-amber-400 transition-colors"
                   >
-                    lsaciasi@yahoo.com
+                    lsaciasi@gmail.com
                   </a>
                 </p>
               </div>
               <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">
                 <p className="flex items-center gap-3">
                   <strong className="text-amber-400">Telefon:</strong>
-                  <span className="text-gray-300">+40 123 456 789</span>
+                  <span className="text-gray-300">+40 771 644 679</span>
                 </p>
               </div>
               <div className="p-4 bg-gray-800/50 rounded-lg border border-gray-700">

@@ -156,7 +156,7 @@ export function CoupleVoting() {
               >
                 <Button
                   size="lg"
-                  className="mx-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-12 py-8 text-2xl shadow-2xl shadow-cyan-500/30"
+                  className="mx-auto w-full md:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-12 py-8 text-2xl shadow-2xl shadow-cyan-500/30 justify-center text-center"
                 >
                   {!isUnlocked ? (
                     <>
@@ -196,7 +196,12 @@ export function CoupleVoting() {
                     : "Introdu codul de acces și selectează cuplul preferat"
                   }
                 </DialogDescription>
-              </DialogHeader>
+                {!isUnlocked && (
+                  <div className="mt-6">
+                    <CountdownDisplay timeRemaining={timeRemaining} variant="compact" />
+                  </div>
+                )}
+                </DialogHeader>
 
               {!isUnlocked ? (
                 /* Locked State with Countdown */
@@ -274,7 +279,7 @@ function LockedVotingState({ timeRemaining, unlockDate }: { timeRemaining: any; 
           Votarea se Deschide în Ziua Balului! 🌍
         </h3>
 
-        <CountdownDisplay timeRemaining={timeRemaining} />
+        {/** countdown mutat sus în DialogHeader; eliminat aici la cerere */}
 
         <p className="text-blue-200 text-xl mt-8">
           Votarea se deschide pe {unlockDate.toLocaleString('ro-RO', {

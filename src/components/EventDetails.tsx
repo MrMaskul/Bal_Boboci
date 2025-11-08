@@ -47,7 +47,7 @@ export function EventDetails() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 gap-8 mb-16">
             {destinations.map((dest, index) => (
               <motion.div
                 key={index}
