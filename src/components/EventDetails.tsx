@@ -1,4 +1,4 @@
-import { Compass, Palmtree, Mountain, Waves, Sparkles, Ticket } from "lucide-react";
+import { Waves, Palmtree, Mountain, Sparkles, Ticket } from "lucide-react";
 import { motion } from "motion/react";
 
 export function EventDetails() {
@@ -36,7 +36,7 @@ export function EventDetails() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="hidden"
           >
             <h2 className="text-white text-4xl md:text-5xl mb-4">
               Călătorește prin 3 Continente
@@ -47,7 +47,7 @@ export function EventDetails() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 gap-8 mb-16">
+          <div className="hidden">
             {destinations.map((dest, index) => (
               <motion.div
                 key={index}

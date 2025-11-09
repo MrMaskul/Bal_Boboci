@@ -296,7 +296,7 @@ export function Sponsors() {
                   <strong className="text-amber-400">Adresă:</strong>
                   <br />
                   <span className="text-gray-300">
-                    Facultatea de Automatică și Calculatoare
+                    Camin T19, et.3
                     <br />
                     Iași, România
                   </span>

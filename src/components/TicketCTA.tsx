@@ -8,7 +8,7 @@ export function TicketCTA() {
       schedule: "Luni-Vineri, 20:00-23:00",
     },
     {
-      name: "Facultatea de Automatică și Calculatoare",
+      name: "Facultatea de Automatică ?i Calculatoare",
       address: "Bulevardul Prof. doc. Dimitrie Mangeron nr. 29",
       schedule: "Luni-Vineri, 10:00-18:00",
     },
@@ -42,9 +42,30 @@ export function TicketCTA() {
 
               <h2 className="text-white text-3xl md:text-5xl mb-4">Bilete disponibile fizic</h2>
 
-              <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
+              <p className="text-white text-lg mb-6 max-w-2xl mx-auto">
                 Vânzarea biletelor se face fizic. Locațiile și programul sunt disponibile mai jos.
               </p>
+              {/* Preturi mutat din Event Details */}
+              <div className="mx-auto max-w-2xl text-left mb-8">
+                <h3 className="text-white text-2xl md:text-3xl mb-4 flex items-center gap-3 justify-center">
+                  <Ticket className="w-7 h-7 text-cyan-300" />
+                  Prețul tău pentru aventură
+                </h3>
+                <div className="space-y-3 text-white">
+                  <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
+                    <span>Early Bird (până la 15 Noiembrie):</span>
+                    <span className="text-white font-semibold">20 RON</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
+                    <span>Standard:</span>
+                    <span className="text-white font-semibold">25 RON</span>
+                  </div>
+                  <div className="flex justify-between items-center p-3 bg-blue-900/30 rounded-lg">
+                    <span>Last Minute:</span>
+                    <span className="text-white font-semibold">30 RON</span>
+                  </div>
+                </div>
+              </div>
 
              
               <div className="mt-8 text-left">
@@ -95,3 +116,7 @@ export function TicketCTA() {
     </section>
   );
 }
+
+
+
+

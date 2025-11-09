@@ -1,9 +1,8 @@
 import { Suspense, lazy } from "react";
 const Hero = lazy(() => import("./components/Hero").then(m => ({ default: m.Hero })));
-const EventDetails = lazy(() => import("./components/EventDetails").then(m => ({ default: m.EventDetails })));
 const Gallery = lazy(() => import("./components/Gallery").then(m => ({ default: m.Gallery })));
 const CoupleReveal = lazy(() => import("./components/CoupleReveal").then(m => ({ default: m.CoupleReveal })));
-const CoupleVoting = lazy(() => import("./components/CoupleVoting").then(m => ({ default: m.CoupleVoting })));
+//const CoupleVoting = lazy(() => import("./components/CoupleVoting").then(m => ({ default: m.CoupleVoting })));
 const Sponsors = lazy(() => import("./components/Sponsors").then(m => ({ default: m.Sponsors })));
 const TicketCTA = lazy(() => import("./components/TicketCTA").then(m => ({ default: m.TicketCTA })));
 const Footer = lazy(() => import("./components/Footer").then(m => ({ default: m.Footer })));
@@ -56,11 +55,6 @@ export default function App() {
       </Suspense>
       <FadeInSection>
         <Suspense fallback={<div style={{height: 200}} />}> 
-          <EventDetails />
-        </Suspense>
-      </FadeInSection>
-      <FadeInSection>
-        <Suspense fallback={<div style={{height: 200}} />}> 
           <Gallery />
         </Suspense>
       </FadeInSection>
@@ -69,11 +63,7 @@ export default function App() {
           <CoupleReveal />
         </Suspense>
       </FadeInSection>
-      <FadeInSection>
-        <Suspense fallback={<div style={{height: 200}} />}> 
-          <CoupleVoting />
-        </Suspense>
-      </FadeInSection>
+      
       <FadeInSection>
         <Suspense fallback={<div style={{height: 180}} />}> 
           <TicketCTA />

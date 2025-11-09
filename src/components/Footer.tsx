@@ -1,4 +1,4 @@
-import { Users, MapPin, Phone, Mail, Facebook, Instagram, Youtube, Linkedin, } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Linkedin, } from 'lucide-react'
 
 const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 32 32" fill="currentColor" {...props}>
@@ -24,13 +24,9 @@ export function Footer() {
             {/* LSAC info */}
             <div className="max-w-2xl">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl">
-                  <Users className="w-7 h-7 text-white" />
-                </div>
+                <div className="hidden"></div>
                 <div>
-                  <h3 className="text-xl font-bold">
-                    LSAC Iași
-                  </h3>
+                  <img src="/images/logo_w.png" alt="LSAC Ia?i" className="h-10 w-auto" loading="eager" decoding="async" />
                   <p className="text-gray-300">Liga Studenților Facultății de Automatică și Calculatoare</p>
                 </div>
               </div>
