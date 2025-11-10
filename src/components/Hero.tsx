@@ -18,13 +18,19 @@ export function Hero() {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/fundal_hero.webp"
-          alt="LSAC Balul Bobocilor Banner"
-          className="w-full h-full object-cover"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source
+            srcSet="/images/hero_mobil.webp"
+            media="(max-width: 768px)"
+          />
+          <img
+            src="/images/fundal_hero.webp"
+            alt="LSAC Balul Bobocilor Banner"
+            className="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
         {/** Overlay removed to show only the banner image */}
       </div>
 

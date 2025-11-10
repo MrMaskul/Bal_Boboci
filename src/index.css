@@ -3545,6 +3545,9 @@ html {
   font-size: var(--font-size);
 }
 
+/* Hero image fit based on viewport aspect ratio 1470/1070 */
+
+
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
