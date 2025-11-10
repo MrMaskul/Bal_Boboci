@@ -83,7 +83,7 @@ export function CoupleReveal() {
     "/images/boboci/denisa+mina.png",
     "/images/boboci/anastasia+darius.png",
     "/images/boboci/denisa+horia.png",
-    "/images/boboci/bianca%20+%20alejandro.png",
+    "/images/boboci/bianca+alejandro.png",
   ];
 
   return (

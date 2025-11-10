@@ -10,10 +10,10 @@ export function Hero() {
     top: `${Math.random() * 100}%`
   })), []);
   const scrollToSection = (e: React.MouseEvent<HTMLElement>, id: string) => {
-  e.preventDefault();
-  const element = document.querySelector(id);
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
+    e.preventDefault();
+    const element = document.querySelector(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -44,24 +44,6 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* CTA button above bottom meta */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.1, duration: 0.8 }}
-        className="hidden"
-      >
-        <div className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 p-[3px] shadow-[0_0_30px_rgba(34,211,238,0.35)]">
-          <Button
-            size="lg"
-            className="bg-slate-900/80 hover:bg-slate-900/90 text-white px-10 py-6 shadow-2xl font-extrabold uppercase tracking-wide text-lg md:text-xl transition-transform transform hover:scale-[1.04] rounded-full"
-            onClick={(e: React.MouseEvent<HTMLButtonElement>) => scrollToSection(e, '#ticket-cta')}
-          >
-            <Plane className="w-5 h-5 mr-2" />
-            Cumpără Bilete
-          </Button>
-        </div>
-      </motion.div>
 
       {/* Bottom-centered event meta */}
       <motion.div
@@ -69,7 +51,7 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.1, duration: 0.8 }}
         className="absolute left-1/2 -translate-x-1/2 transform z-10 w-full px-4"
-        style={{ bottom: 'calc(env(safe-area-inset-bottom) + 50px)' }}
+        style={{ bottom: 'calc(env(safe-area-inset-bottom) + 35px)' }}
       >
         <div className="flex flex-col items-center gap-6">
           <div className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 p-[3px] shadow-[0_0_30px_rgba(34,211,238,0.35)]">
@@ -82,7 +64,7 @@ export function Hero() {
               Cumpără Bilete
             </Button>
           </div>
-          <div className="flex flex-nowrap items-center justify-center gap-6 text-white whitespace-nowrap">
+          <div className="flex flex-col items-center justify-center gap-4 text-white">
             <div className="flex items-center gap-2 bg-blue-900/50 p-[50px] rounded-full backdrop-blur-sm">
               <Calendar className="w-5 h-5 text-cyan-400" />
               <span>29 Noiembrie 2025</span>
@@ -99,80 +81,15 @@ export function Hero() {
         </div>
       </motion.div>
 
-      {/* Floating travel elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {!prefersReducedMotion && floats.map((pos, i) => (
-          <motion.div
-            key={i}
-            className="absolute"
-            style={pos}
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 15 + i * 2,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          >
-            <Plane className="w-8 h-8 text-cyan-400/20" />
-          </motion.div>
-        ))}
-      </div>
+
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="hidden"
-        >
-          <img
-            src="/images/logo_w.png"
-            alt="LSAC Logo"
-            className="h-12 w-auto mx-auto"
-            loading="eager"
-            decoding="async"
-          />
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.8 }}
-          className="hidden"
-        >
-          <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
-            <Calendar className="w-5 h-5 text-cyan-400" />
-            <span>29 Noiembrie 2025</span>
-          </div>
-          <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
-            <Clock className="w-5 h-5 text-cyan-400" />
-            <span>19:00 - 04:00</span>
-          </div>
-          <div className="flex items-center gap-2 bg-blue-900/50 px-4 py-2 rounded-full backdrop-blur-sm">
-            <MapPin className="w-5 h-5 text-cyan-400" />
-            <span>Vivid Lounge and Club</span>
-          </div>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.8 }}
-          className="hidden"
-        >
-          <Button size="lg" className="bg-cyan-600 hover:bg-cyan-700 text-white px-10 py-6 shadow-2xl shadow-cyan-500/30"
-          onClick={(e: React.MouseEvent<HTMLButtonElement>) => scrollToSection(e, '#ticket-cta')}
-          >
-            <Plane className="w-5 h-5 mr-2" />
-            Cumpără Bilete
-          </Button>
-          
-        </motion.div>
+
+
+
 
         {/* Center title */}
         <motion.div
@@ -196,7 +113,7 @@ export function Hero() {
 
       </div>
 
-      
+
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 const Hero = lazy(() => import("./components/Hero").then(m => ({ default: m.Hero })));
 const Gallery = lazy(() => import("./components/Gallery").then(m => ({ default: m.Gallery })));
 const CoupleReveal = lazy(() => import("./components/CoupleReveal").then(m => ({ default: m.CoupleReveal })));
@@ -10,6 +10,20 @@ import { FadeInSection } from "./components/FadeInSection";
 import { Toaster } from "./components/ui/sonner";
 
 export default function App() {
+  useEffect(() => {
+    const idle = (cb: () => void) =>
+      ("requestIdleCallback" in window)
+        ? (window as any).requestIdleCallback(cb)
+        : setTimeout(cb, 200);
+
+    idle(() => {
+      import("./components/Gallery");
+      import("./components/CoupleReveal");
+      import("./components/TicketCTA");
+      import("./components/Sponsors");
+      import("./components/Footer");
+    });
+  }, []);
   return (
     <div
       className="min-h-screen"

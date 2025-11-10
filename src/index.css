@@ -213,6 +213,8 @@
 
   body {
     line-height: inherit;
+    /* Ensure Akira Expanded applies site-wide */
+    font-family: var(--font-sans);
   }
 
   hr {

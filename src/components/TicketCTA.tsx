@@ -8,7 +8,7 @@ export function TicketCTA() {
       schedule: "Luni-Vineri, 20:00-23:00",
     },
     {
-      name: "Facultatea de Automatică ?i Calculatoare",
+      name: "Facultatea de Automatică și Calculatoare",
       address: "Bulevardul Prof. doc. Dimitrie Mangeron nr. 29",
       schedule: "Luni-Vineri, 10:00-18:00",
     },

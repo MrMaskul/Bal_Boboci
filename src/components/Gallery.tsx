@@ -73,6 +73,9 @@ export function Gallery() {
                 <img
                   src={image.url}
                   alt={image.title}
+                  loading="lazy"
+                  decoding="async"
+                  
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300">
@@ -108,6 +111,7 @@ export function Gallery() {
                 animate={{ scale: 1 }}
                 src={images[selectedImage].url}
                 alt={images[selectedImage].title}
+                decoding="async"
                 className="max-w-full max-h-full object-contain rounded-xl"
               />
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
