@@ -101,7 +101,7 @@ export function CoupleReveal() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-white text-3xl md:text-5xl font-akira-expanded tracking-wide">
+          <h2 className="text-white text-3xl md:text-5xl font-extrabold tracking-wide">
             ȚĂRILE PREZENTE ANUL ACEASTA
           </h2>
         </motion.div>

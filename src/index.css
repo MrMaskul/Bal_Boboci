@@ -75,20 +75,12 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: 'Akira Expanded';
-    src: url('/fonts/AkiraExpanded.woff2') format('woff2'),
-         url('/fonts/AkiraExpanded.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
   html { font-family: var(--font-sans); }
 }
 
 @layer theme {
   :root, :host {
-    --font-sans: 'Akira Expanded', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-red-200: oklch(.885 .062 18.334);
     --color-red-400: oklch(.704 .191 22.216);
@@ -208,6 +200,7 @@
     font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var(--default-font-variation-settings, normal);
+    font-size-adjust: from-font;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -215,6 +208,7 @@
     line-height: inherit;
     /* Ensure Akira Expanded applies site-wide */
     font-family: var(--font-sans);
+    font-size-adjust: from-font;
   }
 
   hr {
@@ -496,6 +490,13 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+
+  /* Bold specific section headings and labels */
+  #ticket-cta h2 { font-weight: 800; }
+  #ticket-cta h3 { font-weight: 800; }
+  #ticket-cta .flex.justify-between > span:first-child { font-weight: 600; }
+  #sponsors h2 { font-weight: 800; }
+  #sponsors h3 { font-weight: 700; }
 }
 
 @layer utilities {

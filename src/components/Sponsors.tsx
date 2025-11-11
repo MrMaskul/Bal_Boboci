@@ -168,7 +168,7 @@ export function Sponsors() {
     <div className="mb-12">
       <div className="text-center mb-8">
         <h3
-          className={`text-xl mb-2 ${
+          className={`text-xl mb-2 font-bold ${
             tier === "gold"
               ? "text-amber-400"
               : tier === "silver"
@@ -190,9 +190,9 @@ export function Sponsors() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl mb-4">Sponsorii Noștri</h2>
-            <p className="text-white/85 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            <h3 className="text-white/85 max-w-2xl mx-auto leading-relaxed drop-shadow">
               Mulțumim partenerilor care fac posibilă organizarea acestui eveniment special
-            </p>
+            </h3>
           </div>
 
           {/* GOLD */}

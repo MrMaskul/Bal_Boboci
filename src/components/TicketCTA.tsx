@@ -15,7 +15,7 @@ export function TicketCTA() {
     {
       name: "Vivid Lounge and Club",
       address: "Bulevardul Prof. doc. Dimitrie Mangeron nr. 71",
-      schedule: "Sâmbătă, 29 Noiembrie, 19:00-21:00",
+      schedule: "Sâmbătă, 29 Noiembrie, 18:45-21:00",
     },
   ];
   return (
@@ -40,14 +40,14 @@ export function TicketCTA() {
                 <Ticket className="w-10 h-10 text-white/90" />
               </div>
 
-              <h2 className="text-white text-3xl md:text-5xl mb-4">Bilete disponibile fizic</h2>
+              <h2 className="text-white text-3xl md:text-5xl mb-4 font-extrabold">Bilete disponibile fizic</h2>
 
               <p className="text-white text-lg mb-6 max-w-2xl mx-auto">
                 Vânzarea biletelor se face fizic. Locațiile și programul sunt disponibile mai jos.
               </p>
               {/* Preturi mutat din Event Details */}
               <div className="mx-auto max-w-2xl text-left mb-8">
-                <h3 className="text-white text-2xl md:text-3xl mb-4 flex items-center gap-3 justify-center">
+                <h3 className="text-white text-2xl md:text-3xl mb-4 flex items-center gap-3 justify-center font-extrabold">
                   <Ticket className="w-7 h-7 text-cyan-300" />
                   Prețul tău pentru aventură
                 </h3>
@@ -116,7 +116,5 @@ export function TicketCTA() {
     </section>
   );
 }
-
-
 
 

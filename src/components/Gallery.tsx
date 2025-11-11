@@ -51,11 +51,11 @@ export function Gallery() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-white text-4xl md:text-5xl mb-4">
+            <h2 className="text-white text-4xl md:text-5xl mb-4 font-extrabold">
               Amintiri de la Balul Bobocilor din 2024
             </h2>
             <p className="text-blue-200 max-w-2xl mx-auto">
-              Privește în urmă la momentele magice din editia anterioara a Balului Bobocilor
+              Privește în urmă la momentele magice din ediția anterioară a Balului Bobocilor
             </p>
           </motion.div>
 

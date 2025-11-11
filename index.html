@@ -9,8 +9,11 @@
       <link rel="icon" type="image/png" href="/images/logo/lsac-logo.png" />
       <link rel="shortcut icon" type="image/png" href="/images/logo/lsac-logo.png" />
       <link rel="apple-touch-icon" href="/images/logo/lsac-logo.png" />
-      <!-- Preload critical font and hero image for faster LCP -->
-      <link rel="preload" href="/fonts/AkiraExpanded.woff2" as="font" type="font/woff2" crossorigin>
+      <!-- Load Montserrat (Latin-Extended) for proper Romanian diacritics -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <!-- Preload hero images for faster LCP -->
       <link rel="preload" href="/images/fundal_hero.webp" as="image" fetchpriority="high">
       <link rel="preload" href="/images/hero_mobil.webp" as="image" media="(max-width: 768px)" fetchpriority="high">
     </head>
