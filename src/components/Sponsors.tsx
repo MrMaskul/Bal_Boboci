@@ -109,7 +109,7 @@ export function Sponsors() {
       name: "Laser Tag Galaxy Arena",
       tier: "silver",
       link: "https://galaxyarena.ro/?gad_source=1",
-      description: "Partener educațional.",
+      description: "Arena unde devii legendă",
       image: "/images/sponsors/galaxy.webp",
     },
     {
