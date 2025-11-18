@@ -1,4 +1,5 @@
 ﻿import React, { useState } from "react";
+import { LazyImage } from "./LazyImage";
 
 type Tier = "gold" | "silver" | "bronze";
 
@@ -18,20 +19,14 @@ const ensureAbsoluteUrl = (url?: string) =>
 
 // Logo component centrat + fallback
 function SponsorLogo({ src, alt }: { src?: string; alt: string }) {
-  const [error, setError] = useState(false);
-  const finalSrc = !src || error ? FALLBACK_LOGO : src;
-
   return (
-    <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl bg-white/70 dark:bg-white/10 border border-white/20 dark:border-white/10 flex items-center justify-center overflow-hidden mx-auto">
-      <img
-        src={finalSrc}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        className="max-h-full max-w-full object-contain"
-        onError={() => setError(true)}
-      />
-    </div>
+    <LazyImage
+      src={src}
+      alt={alt}
+      fallbackSrc={FALLBACK_LOGO}
+      wrapperClassName="w-28 h-28 md:w-32 md:h-32 rounded-xl bg-white/70 dark:bg-white/10 border border-white/20 dark:border-white/10 flex items-center justify-center overflow-hidden mx-auto"
+      className="max-h-full max-w-full object-contain"
+    />
   );
 }
 

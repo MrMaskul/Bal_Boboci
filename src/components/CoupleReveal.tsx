@@ -78,12 +78,12 @@ export function CoupleReveal() {
 
   // Fixed mapping of couple images in the same order as COUPLES_DATA
   const COUPLE_IMAGES: string[] = [
-    "/images/boboci/giulia+david.png",
-    "/images/boboci/taisia+matei.png",
-    "/images/boboci/denisa+mina.png",
-    "/images/boboci/anastasia+darius.png",
-    "/images/boboci/denisa+horia.png",
-    "/images/boboci/bianca+alejandro.png",
+    "/images/boboci/giulia+david.webp",
+    "/images/boboci/taisia+matei.webp",
+    "/images/boboci/denisa+mina.webp",
+    "/images/boboci/anastasia+darius.webp",
+    "/images/boboci/denisa+horia.webp",
+    "/images/boboci/bianca+alejandro.webp",
   ];
 
   return (

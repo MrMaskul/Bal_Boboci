@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Linkedin, } from 'lucide-react'
+import { LazyImage } from "./LazyImage";
 
 const TikTok = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 32 32" fill="currentColor" {...props}>
@@ -26,7 +27,14 @@ export function Footer() {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="hidden"></div>
                 <div>
-                  <img src="/images/logo_w.png" alt="LSAC Ia?i" className="h-10 w-auto" loading="lazy" decoding="async" />
+                  <LazyImage
+                    src="/images/logo_w.png"
+                    alt="LSAC Iași"
+                    fallbackSrc="/images/logo/lsac-logo.png"
+                    wrapperClassName="h-10 w-auto inline-block"
+                    className="h-10 w-auto object-contain"
+                    loading="lazy"
+                  />
                   <p className="text-gray-300">Liga Studenților Facultății de Automatică și Calculatoare</p>
                 </div>
               </div>

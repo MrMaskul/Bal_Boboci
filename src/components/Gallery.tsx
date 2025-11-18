@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import { LazyImage } from "./LazyImage";
 
 type GalleryImage = {
   url: string;
@@ -70,13 +71,12 @@ export function Gallery() {
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer border-2 border-cyan-500/20 hover:border-cyan-400/60 transition-all duration-300"
                 onClick={() => setSelectedImage(index)}
               >
-                <img
+                <LazyImage
                   src={image.url}
                   alt={image.title}
+                  wrapperClassName="w-full h-full"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
                   loading="lazy"
-                  decoding="async"
-                  
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300">
                 </div>
@@ -108,12 +108,18 @@ export function Gallery() {
               </button>
               <motion.img
                 initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                src={images[selectedImage].url}
-                alt={images[selectedImage].title}
-                decoding="async"
-                className="max-w-full max-h-full object-contain rounded-xl"
-              />
+              animate={{ scale: 1 }}
+              src={images[selectedImage].url}
+              alt={images[selectedImage].title}
+              decoding="async"
+              loading="lazy"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                img.onerror = null;
+                img.src = "/images/logo/lsac-logo.png";
+              }}
+              className="max-w-full max-h-full object-contain rounded-xl"
+            />
               <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
                 
                 <h3 className="text-white text-2xl">{images[selectedImage].title}</h3>
