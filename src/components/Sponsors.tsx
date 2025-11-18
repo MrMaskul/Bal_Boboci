@@ -76,6 +76,7 @@ export function Sponsors() {
       description: "Partener principal — entertainment & afterparty.",
       image: "/images/sponsors/vivid.jpg",
     },
+    
   
     {
       name: "Chicano Tattoo",
@@ -83,6 +84,13 @@ export function Sponsors() {
       link: "https://www.instagram.com/chicanotattooiasi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       description: "Artă, atitudine și cerneală de top.",
       image: "/images/sponsors/chicano.webp",
+    },
+      {
+       name: "Royal Crown Cola",
+      tier: "gold",
+      link: "https://rccolainternational.com",
+      description: "Răcoritoare clasică, cu gust autentic și energizant.",
+      image: "/images/sponsors/rcc.webp",
     },
     {
       name: "T Zero",
